@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nfood/constants.dart';
+import 'package:nfood/detail_screen.dart';
 
 import 'widgets/category_title.dart';
 import 'widgets/food_card.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           ),
           button: TextStyle(fontWeight: FontWeight.bold),
           title: TextStyle(fontWeight: FontWeight.bold),
+          body1: TextStyle(color: kTextColor),
         ),
       ),
       home: HomeScreen(),
@@ -110,6 +112,11 @@ class HomeScreen extends StatelessWidget {
                   calories: "420Kcal",
                   description: "Contrary to popular belief, Lorem Ipsum is not simple random text. It has roots in a piece of classical Latin",
                   ingredient: "red tomato",
+                  press: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return DetailScreen();
+                    }),);
+                  },
                 ),
                 FoodCard(
                   title: "Vegan salad bowl",
@@ -118,6 +125,7 @@ class HomeScreen extends StatelessWidget {
                   calories: "420Kcal",
                   description: "Contrary to popular belief, Lorem Ipsum is not simple random text. It has roots in a piece of classical Latin",
                   ingredient: "red tomato",
+                  press: () {},
                 ),
                 SizedBox(
                   width: 20,
