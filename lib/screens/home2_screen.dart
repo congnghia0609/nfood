@@ -16,18 +16,24 @@
 
 ///
 /// @author nghiatc
-/// @since Sep 03, 2020
+/// @since Sep 04, 2020
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nfood/components/bottom_nav_bar.dart';
+import 'package:nfood/constants.dart';
 
-const kWhiteColor = Color(0xFFFFFFFF);
-const kBlackColor = Color(0xFF000000);
-// const kTextColor = Color(0xFF1D150B);
-// const kPrimaryColor = Color(0xFFFB475F);
-// const kSecondaryColor = Color(0xFFF5E1CB);
-const kBorderColor = Color(0xFFDDDDDD);
+import 'components/app_bar.dart';
+import 'components/body.dart';
 
-const kPrimaryColor = Color(0xFFFFC61F);
-const kSecondaryColor = Color(0xFFB5BFD0);
-const kTextColor = Color(0xFF50505D);
-const kTextLightColor = Color(0xFF6A727D);
+class Home2Screen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: homeAppBar(context),
+      body: Body(),
+      bottomNavigationBar: BottomNavBar(),
+    );
+  }
+}
+

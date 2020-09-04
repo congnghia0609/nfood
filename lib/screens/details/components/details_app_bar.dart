@@ -16,18 +16,27 @@
 
 ///
 /// @author nghiatc
-/// @since Sep 03, 2020
+/// @since Sep 04, 2020
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-const kWhiteColor = Color(0xFFFFFFFF);
-const kBlackColor = Color(0xFF000000);
-// const kTextColor = Color(0xFF1D150B);
-// const kPrimaryColor = Color(0xFFFB475F);
-// const kSecondaryColor = Color(0xFFF5E1CB);
-const kBorderColor = Color(0xFFDDDDDD);
-
-const kPrimaryColor = Color(0xFFFFC61F);
-const kSecondaryColor = Color(0xFFB5BFD0);
-const kTextColor = Color(0xFF50505D);
-const kTextLightColor = Color(0xFF6A727D);
+AppBar detailsAppBar() {
+  return AppBar(
+    elevation: 0,
+    leading: IconButton(
+      icon: Icon(Icons.arrow_back, color: Colors.white,),
+      onPressed: () {},
+    ),
+    actions: [
+      IconButton(
+        icon: SvgPicture.asset("assets/icons/share.svg"),
+        onPressed: () {},
+      ),
+      IconButton(
+        icon: SvgPicture.asset("assets/icons/more.svg"),
+        onPressed: () {},
+      ),
+    ],
+  );
+}

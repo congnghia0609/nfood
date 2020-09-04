@@ -16,18 +16,25 @@
 
 ///
 /// @author nghiatc
-/// @since Sep 03, 2020
+/// @since Sep 04, 2020
 
 import 'package:flutter/material.dart';
 
-const kWhiteColor = Color(0xFFFFFFFF);
-const kBlackColor = Color(0xFF000000);
-// const kTextColor = Color(0xFF1D150B);
-// const kPrimaryColor = Color(0xFFFB475F);
-// const kSecondaryColor = Color(0xFFF5E1CB);
-const kBorderColor = Color(0xFFDDDDDD);
+class ItemImage extends StatelessWidget {
+  final String imgSrc;
+  const ItemImage({
+    Key key, this.imgSrc,
+  }) : super(key: key);
 
-const kPrimaryColor = Color(0xFFFFC61F);
-const kSecondaryColor = Color(0xFFB5BFD0);
-const kTextColor = Color(0xFF50505D);
-const kTextLightColor = Color(0xFF6A727D);
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Image.asset(
+      imgSrc,
+      height: size.height * 0.25,
+      // it cover the 25% of total height
+      width: double.infinity,
+      fit: BoxFit.fill,
+    );
+  }
+}

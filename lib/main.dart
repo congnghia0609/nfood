@@ -3,6 +3,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nfood/constants.dart';
 import 'package:nfood/detail_screen.dart';
+import 'package:nfood/screens/home2_screen.dart';
 
 import 'widgets/category_title.dart';
 import 'widgets/food_card.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
           button: TextStyle(fontWeight: FontWeight.bold),
           title: TextStyle(fontWeight: FontWeight.bold),
           body1: TextStyle(color: kTextColor),
+          body2: TextStyle(color: kSecondaryColor),
         ),
       ),
       home: HomeScreen(),
@@ -60,13 +62,20 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20, top: 50),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: SvgPicture.asset(
-                "assets/icons/menu.svg",
-                height: 11,
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Home2Screen();
+              }),);
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20, top: 50),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: SvgPicture.asset(
+                  "assets/icons/menu.svg",
+                  height: 11,
+                ),
               ),
             ),
           ),
