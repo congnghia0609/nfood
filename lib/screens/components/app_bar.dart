@@ -30,7 +30,9 @@ AppBar homeAppBar(BuildContext context) {
     elevation: 0,
     leading: IconButton(
       icon: SvgPicture.asset("assets/icons/menu2.svg"),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pop(context);
+      },
     ),
     title: RichText(
       text: TextSpan(style: Theme.of(context).textTheme.title.copyWith(fontWeight: FontWeight.bold), children: [
